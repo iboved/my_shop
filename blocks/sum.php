@@ -10,11 +10,9 @@ $row_basket = mysql_fetch_row($query_basket);
 $count = $row_basket[0];
 
 // Определяем общую сумму товаров
-$sql_sum = "SELECT goods.price_good FROM basket, goods WHERE basket.customer = '$session_id' AND basket.id_good = goods.id_good";
+$sql_sum = "SELECT price_good FROM goods INNER JOIN basket ON goods.id_good = basket.id_good AND customer = '$session_id'";
 $query_sum = mysql_query($sql_sum) or die(mysql_error());
 $sum = 0;
 while ($row_sum = mysql_fetch_assoc($query_sum)) {
     $sum += $row_sum['price_good'];
 }
-
-echo $sum;
