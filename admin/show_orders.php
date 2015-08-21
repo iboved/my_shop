@@ -17,6 +17,7 @@
         </tr>
         <?php
         $sql_order = "SELECT * FROM orders INNER JOIN goods USING(id_good) LEFT JOIN categories USING(id_cat) ORDER BY id_order DESC";
+
         $query_order = mysql_query($sql_order) or die(mysql_error());
         $orders = array();
         $sum = 0;
