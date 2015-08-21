@@ -36,10 +36,14 @@ if ($count == 0) {
         </tr>
 <?php
     }
-}
 ?>
     </table>
-    <h4><a href="order.php">Оформить заказ</a></h4>
+<h4><a href="order.php">Оформить заказ</a></h4>
+
+<?php
+}
+?>
+
     <h4>Перейти в <a href="index.php">каталог</a></h4>
 
 

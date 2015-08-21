@@ -1,8 +1,12 @@
 <?php
 
+session_start();
 include_once 'admin/blocks/bd.php';
-//require 'blocks/sum.php';
+require 'blocks/sum.php';
 include 'admin/blocks/header.php';
+if ($count == 0) {
+    echo '<h4>Корзина пуста - вы не можете оформить закказ. Перейти в <a href="index.php">каталог</a> товаров</h4>';
+} else {
 ?>
 <form action="orders_save.php" method="post">
     <label>Заказчик</label><br>
@@ -16,4 +20,5 @@ include 'admin/blocks/header.php';
     <input type="submit" name="submit" value="Оформить заказ">
 </form>
 <?php
+}
 require 'admin/blocks/footer.php';
